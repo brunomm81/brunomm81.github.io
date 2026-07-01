@@ -1,0 +1,118 @@
+/* ============================================================
+   components.css — Botões, cards, toggle, hamburger, WhatsApp float
+   ============================================================ */
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 28px; border-radius: 30px; font-weight: 600; font-size: .95rem;
+  transition: all var(--t); position: relative; overflow: hidden;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 6px 20px var(--glow); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px var(--glow); filter: brightness(1.05); }
+.btn-primary::after {
+  content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg); transition: left .7s;
+}
+.btn-primary:hover::after { left: 130%; }
+.btn-ghost { background: var(--surface); color: var(--heading); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.btn-ghost:hover { transform: translateY(-3px); border-color: var(--accent); color: var(--accent-text); box-shadow: var(--shadow-md); }
+
+/* ---- About card ---- */
+.about-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-md); }
+.about-card h3 { font-size: 1.2rem; margin-bottom: 20px; }
+.mini-item { display: flex; gap: 14px; margin-bottom: 18px; }
+.mini-item:last-child { margin-bottom: 0; }
+.mini-ic { flex-shrink: 0; width: 42px; height: 42px; display: grid; place-items: center; background: var(--accent-soft); border-radius: 11px; font-size: 1.2rem; }
+.mini-item strong { display: block; color: var(--heading); font-size: .98rem; }
+.mini-item p { color: var(--text-soft); font-size: .88rem; line-height: 1.5; }
+
+/* ---- Skill cards ---- */
+.skill-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px 26px; box-shadow: var(--shadow-sm); transition: all var(--t); position: relative; overflow: hidden;
+}
+.skill-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--blue-400), var(--accent)); transform: scaleX(0);
+  transform-origin: left; transition: transform var(--t);
+}
+.skill-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.skill-card:hover::before { transform: scaleX(1); }
+.skill-ic {
+  width: 54px; height: 54px; display: grid; place-items: center; border-radius: 13px;
+  background: var(--accent-soft); font-size: 1.6rem; margin-bottom: 18px; transition: transform var(--t);
+}
+.skill-card:hover .skill-ic { transform: scale(1.1) rotate(-6deg); }
+.skill-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.skill-card p { color: var(--text-soft); font-size: .93rem; }
+.skill-highlight { border-color: var(--accent); background: linear-gradient(160deg, var(--accent-soft), var(--surface)); }
+
+/* ---- Project cards ---- */
+.project-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 26px; box-shadow: var(--shadow-sm); transition: all var(--t); display: flex; flex-direction: column;
+}
+.project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.project-card.hide { display: none; }
+.project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.project-ic { width: 46px; height: 46px; display: grid; place-items: center; background: var(--accent-soft); border-radius: 12px; font-size: 1.35rem; }
+.project-tag { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent-text); background: var(--accent-soft); padding: 5px 12px; border-radius: 20px; }
+.project-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.project-card p { color: var(--text-soft); font-size: .93rem; flex-grow: 1; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.project-stack li { font-size: .76rem; font-weight: 500; color: var(--text-soft); background: var(--surface-2); padding: 5px 11px; border-radius: 7px; }
+
+/* ---- Service cards ---- */
+.service-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 26px; box-shadow: var(--shadow-sm); transition: all var(--t); position: relative;
+}
+.service-card::after {
+  content: ''; position: absolute; inset: 0; border-radius: var(--radius); padding: 1px;
+  background: linear-gradient(135deg, var(--accent), transparent); opacity: 0; transition: opacity var(--t);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.service-card:hover::after { opacity: 1; }
+.service-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.service-card p { color: var(--text-soft); font-size: .9rem; }
+
+/* ---- Theme toggle ---- */
+.theme-toggle {
+  width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-soft); transition: all var(--t-fast);
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+/* ---- Hamburger ---- */
+.hamburger { display: none; width: 40px; height: 40px; flex-direction: column; gap: 5px; align-items: center; justify-content: center; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); }
+.hamburger span { width: 20px; height: 2px; background: var(--heading); border-radius: 2px; transition: all var(--t); }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- Floating WhatsApp ---- */
+.wa-float {
+  position: fixed; bottom: 26px; right: 26px; z-index: 950;
+  width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center;
+  background: #25d366; color: #fff; box-shadow: 0 10px 26px rgba(37,211,102,.45);
+  transition: transform var(--t); animation: waPulse 2.6s infinite;
+}
+.wa-float:hover { transform: scale(1.1); }
+.wa-tooltip {
+  position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+  background: var(--heading); color: var(--bg); padding: 8px 14px; border-radius: 8px;
+  font-size: .82rem; font-weight: 600; white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity var(--t-fast), transform var(--t-fast); transform-origin: right center;
+}
+.wa-tooltip::after { content: ''; position: absolute; right: -5px; top: 50%; transform: translateY(-50%) rotate(45deg); width: 10px; height: 10px; background: var(--heading); }
+.wa-float:hover .wa-tooltip { opacity: 1; transform: translateY(-50%) translateX(-4px); }
+
+/* badge dot */
+.badge-dot { width: 9px; height: 9px; border-radius: 50%; background: #25d366; box-shadow: 0 0 0 0 rgba(37,211,102,.5); animation: dotPulse 2s infinite; }

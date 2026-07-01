@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruno Monteiro — Desenvolvedor & Consultor ERP Protheus</title>
+  <meta name="description" content="Bruno Monteiro — Desenvolvedor e Consultor ERP Protheus (ADVPL) em Itajaí/SC. 20+ anos em TI, 15+ em Protheus. Especialista em integrações REST/SOAP, Faturamento, Financeiro, Estoque/Custos e SQL." />
+  <meta name="author" content="Bruno Monteiro" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bruno Monteiro — Consultor ERP Protheus" />
+  <meta property="og:description" content="Desenvolvedor e Consultor ERP Protheus especialista em integrações. 20+ anos de TI." />
+  <meta property="og:image" content="assets/img/foto.png" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💠</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ====== PROGRESS BAR ====== -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="brand" aria-label="Início">
+        <span class="brand-mark">BM</span>
+        <span class="brand-text">Bruno Monteiro</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Especialidades</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#vornx">VORNX</a>
+        <a href="#contato" class="nav-cta">Contato</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20"><path d="M12 17a5 5 0 100-10 5 5 0 000 10zM12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow reveal">Itajaí · Santa Catarina · Brasil</p>
+        <h1 class="hero-title reveal">
+          Bruno Monteiro
+        </h1>
+        <h2 class="hero-role">
+          <span class="type-target" id="typeTarget"></span><span class="type-cursor">|</span>
+        </h2>
+        <p class="hero-desc reveal">
+          Mais de <strong>20 anos em TI</strong> e <strong>15 anos como consultor Protheus</strong>.
+          Especialista em <strong>integrações REST &amp; SOAP</strong>, automação de processos e
+          desenvolvimento ADVPL para os módulos de Faturamento, Financeiro e Estoque/Custos.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+          <a href="#contato" class="btn btn-ghost">Fale Comigo</a>
+        </div>
+        <div class="hero-social reveal">
+          <a href="https://www.linkedin.com/in/brunomm81/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21h-4z"/></svg>
+          </a>
+          <a href="https://wa.me/5547991757266" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3s.75-2.12 1-2.42c.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.17-.3.38-.44.5-.14.15-.29.3-.13.58.17.29.75 1.23 1.6 2 1.11.98 2.04 1.29 2.33 1.43.29.15.46.12.63-.07.17-.2.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal">
+        <div class="photo-ring"></div>
+        <div class="photo-frame">
+          <img src="assets/img/foto.png" alt="Foto de Bruno Monteiro" loading="eager" />
+        </div>
+        <div class="photo-badge">
+          <span class="badge-dot"></span> Disponível para projetos
+        </div>
+      </div>
+    </div>
+
+    <a href="#sobre" class="scroll-cue" aria-label="Rolar para baixo">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ====== STATS / COUNTERS ====== -->
+  <section class="stats" id="stats">
+    <div class="container stats-grid">
+      <div class="stat reveal">
+        <span class="stat-num" data-target="20" data-suffix="+">0</span>
+        <span class="stat-label">Anos em TI</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-target="15" data-suffix="+">0</span>
+        <span class="stat-label">Anos com Protheus</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-target="50" data-suffix="+">0</span>
+        <span class="stat-label">Integrações entregues</span>
+      </div>
+      <div class="stat reveal">
+        <span class="stat-num" data-target="3" data-suffix="">0</span>
+        <span class="stat-label">Módulos de domínio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SOBRE ====== -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">01 — Sobre</span>
+        <h2 class="section-title">Quem sou eu</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Sou <strong>Bruno Monteiro</strong>, desenvolvedor e consultor <strong>ERP Protheus (TOTVS)</strong> baseado
+            em <strong>Itajaí, Santa Catarina</strong>. Formado em <strong>Ciência da Computação pela Unimes (Santos)</strong>,
+            construí minha carreira ao longo de mais de duas décadas em Tecnologia da Informação.
+          </p>
+          <p>
+            Nos últimos 15 anos me especializei em <strong>ADVPL</strong> e na arquitetura de <strong>integrações
+            robustas</strong> — conectando o Protheus a plataformas como o <strong>Salesforce</strong> via
+            <strong>APIs REST e SOAP</strong>. Já atuei em <strong>empresas multinacionais em Itajaí/SC</strong>,
+            resolvendo problemas complexos de faturamento, controle de estoque e finanças.
+          </p>
+          <p>
+            Meu foco é claro: transformar processos manuais em <strong>fluxos automáticos, confiáveis e
+            auditáveis</strong>, gerando eficiência real para o negócio.
+          </p>
+          <ul class="about-facts">
+            <li><span>📍</span> Itajaí — SC</li>
+            <li><span>🎓</span> Ciência da Computação · Unimes</li>
+            <li><span>💼</span> Consultor & Freelancer Protheus</li>
+            <li><span>🎩</span> Fundador da marca VORNX</li>
+          </ul>
+        </div>
+        <aside class="about-card reveal">
+          <h3>Como eu trabalho</h3>
+          <div class="mini-item"><span class="mini-ic">🔎</span><div><strong>Diagnóstico</strong><p>Entendo o processo e mapeio a regra de negócio antes de codar.</p></div></div>
+          <div class="mini-item"><span class="mini-ic">⚙️</span><div><strong>Desenvolvimento</strong><p>ADVPL limpo, modular e documentado, pensando em manutenção.</p></div></div>
+          <div class="mini-item"><span class="mini-ic">🔗</span><div><strong>Integração</strong><p>REST/SOAP resilientes, com tratamento de erros e logs.</p></div></div>
+          <div class="mini-item"><span class="mini-ic">✅</span><div><strong>Entrega</strong><p>Testes, homologação e transferência de conhecimento.</p></div></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS ====== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">02 — Especialidades</span>
+        <h2 class="section-title">Domínio técnico</h2>
+        <p class="section-sub">Onde entrego mais valor no ecossistema TOTVS Protheus.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-ic">🧾</div>
+          <h3>Faturamento</h3>
+          <p>Automação de faturamento, regras fiscais e otimização de processos de emissão.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-ic">💰</div>
+          <h3>Financeiro</h3>
+          <p>Contas a pagar/receber, conciliações e fluxos financeiros integrados.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-ic">📦</div>
+          <h3>Estoque & Custos</h3>
+          <p>Controle de estoque, movimentações automáticas e apuração de custos.</p>
+        </article>
+        <article class="skill-card reveal skill-highlight">
+          <div class="skill-ic">🔗</div>
+          <h3>Integrações REST & SOAP</h3>
+          <p>Especialidade principal: integrações resilientes entre Protheus e sistemas externos.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-ic">☁️</div>
+          <h3>Salesforce</h3>
+          <p>Sincronização de dados e processos entre Protheus e a plataforma Salesforce.</p>
+        </article>
+        <article class="skill-card reveal">
+          <div class="skill-ic">🗄️</div>
+          <h3>SQL</h3>
+          <p>Consultas avançadas, performance, tuning e análise direta na base de dados.</p>
+        </article>
+      </div>
+
+      <div class="tech-strip reveal" aria-label="Tecnologias">
+        <span>ADVPL</span><span>TLPP</span><span>REST API</span><span>SOAP</span><span>SQL</span>
+        <span>TOTVS Protheus</span><span>Salesforce</span><span>JSON</span><span>XML</span><span>Web Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TRAJETÓRIA ====== -->
+  <section class="section" id="trajetoria">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">03 — Trajetória</span>
+        <h2 class="section-title">Minha jornada</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-period">Hoje</span>
+            <h3>Consultor & Desenvolvedor Protheus</h3>
+            <p>Atuação como consultor e freelancer, com foco em integrações REST/SOAP, automação e customizações ADVPL para indústrias e multinacionais.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-period">~15 anos</span>
+            <h3>Especialização em ERP Protheus</h3>
+            <p>Consolidação como consultor Protheus, dominando Faturamento, Financeiro e Estoque/Custos em ambientes corporativos exigentes.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-period">Multinacionais · Itajaí/SC</span>
+            <h3>Projetos em grande escala</h3>
+            <p>Experiência em empresas multinacionais, entregando integrações críticas — incluindo conectividade com Salesforce.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-period">20+ anos atrás</span>
+            <h3>Início na Tecnologia da Informação</h3>
+            <p>Formação em Ciência da Computação pela Unimes (Santos) e primeiros passos na carreira de TI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJETOS ====== -->
+  <section class="section section-alt" id="projetos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">04 — Projetos</span>
+        <h2 class="section-title">Projetos em destaque</h2>
+        <p class="section-sub">Uma seleção de soluções que desenvolvi e integrei.</p>
+      </div>
+
+      <div class="filters reveal" id="projectFilters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="integracao">Integrações</button>
+        <button class="filter" data-filter="faturamento">Faturamento</button>
+        <button class="filter" data-filter="estoque">Estoque</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card reveal" data-cat="faturamento">
+          <div class="project-top"><span class="project-ic">🧾</span><span class="project-tag">Faturamento</span></div>
+          <h3>Faturamento Automático</h3>
+          <p>Automatização completa do processo de faturamento no Protheus, reduzindo trabalho manual e erros na emissão de documentos.</p>
+          <ul class="project-stack"><li>ADVPL</li><li>Regras Fiscais</li><li>SQL</li></ul>
+        </article>
+
+        <article class="project-card reveal" data-cat="integracao estoque">
+          <div class="project-top"><span class="project-ic">📦</span><span class="project-tag">Integração</span></div>
+          <h3>Integração de Controle de Estoque</h3>
+          <p>Integração entre o controle de estoque do Protheus e sistemas externos, mantendo saldos e movimentações sincronizados em tempo real.</p>
+          <ul class="project-stack"><li>REST</li><li>SOAP</li><li>ADVPL</li></ul>
+        </article>
+
+        <article class="project-card reveal" data-cat="integracao">
+          <div class="project-top"><span class="project-ic">☁️</span><span class="project-tag">Integração</span></div>
+          <h3>Integração Protheus ↔ Salesforce</h3>
+          <p>Diversas integrações conectando o Protheus ao Salesforce, unificando dados comerciais e operacionais via APIs REST/SOAP.</p>
+          <ul class="project-stack"><li>Salesforce</li><li>REST API</li><li>JSON</li></ul>
+        </article>
+
+        <article class="project-card reveal" data-cat="integracao">
+          <div class="project-top"><span class="project-ic">🔗</span><span class="project-tag">Integração</span></div>
+          <h3>Web Services & APIs Corporativas</h3>
+          <p>Construção de web services robustos para expor e consumir dados do Protheus, com tratamento de erros, logs e segurança.</p>
+          <ul class="project-stack"><li>SOAP</li><li>REST</li><li>XML</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SERVIÇOS ====== -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">05 — Serviços</span>
+        <h2 class="section-title">Como posso ajudar</h2>
+        <p class="section-sub">Disponível como consultor e freelancer para novos projetos.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <h3>Customização ADVPL</h3>
+          <p>Desenvolvimento de rotinas, telas e regras de negócio sob medida para o seu Protheus.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Integrações de Sistemas</h3>
+          <p>Conexão do Protheus a ERPs, CRMs e plataformas externas via REST e SOAP.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Automação de Processos</h3>
+          <p>Eliminação de tarefas manuais em Faturamento, Financeiro e Estoque.</p>
+        </article>
+        <article class="service-card reveal">
+          <h3>Consultoria & Sustentação</h3>
+          <p>Análise, diagnóstico e melhoria contínua do seu ambiente Protheus.</p>
+        </article>
+      </div>
+      <div class="services-cta reveal">
+        <p>Tem um desafio no seu Protheus?</p>
+        <a href="https://wa.me/5547991757266?text=Ol%C3%A1%20Bruno,%20vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="btn btn-primary">Solicitar orçamento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== VORNX ====== -->
+  <section class="section vornx" id="vornx">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">06 — Side Project</span>
+        <h2 class="section-title">VORNX</h2>
+        <p class="section-sub">Meu hobby que virou marca.</p>
+      </div>
+      <div class="vornx-grid">
+        <div class="vornx-text reveal">
+          <span class="vornx-logo">V<em>R</em>X</span>
+          <h3>Bonés & boinas com identidade própria</h3>
+          <p>
+            Fora do mundo dos ERPs, eu vivo uma paixão: <strong>bonés e boinas</strong>. Dessa paixão nasceu a
+            <strong>VORNX</strong> — minha marca própria, com o monograma <strong>VRX</strong>, pensada para quem
+            valoriza estilo sóbrio e qualidade.
+          </p>
+          <p>A marca está em desenvolvimento e chega ao mercado nos <strong>próximos meses</strong>.</p>
+          <span class="vornx-soon"><span class="badge-dot"></span> Em breve</span>
+        </div>
+        <div class="vornx-photo reveal">
+          <div class="vornx-glow"></div>
+          <img src="assets/img/BONE.png" alt="Boné VORNX com monograma VRX" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTATO ====== -->
+  <section class="section section-alt contato" id="contato">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">07 — Contato</span>
+        <h2 class="section-title">Vamos conversar</h2>
+        <p class="section-sub">Aberto a projetos, parcerias e novas oportunidades.</p>
+      </div>
+      <div class="contact-actions reveal">
+        <a href="https://wa.me/5547991757266?text=Ol%C3%A1%20Bruno!" target="_blank" rel="noopener" class="contact-btn wa">
+          <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3s.75-2.12 1-2.42c.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.17-.3.38-.44.5-.14.15-.29.3-.13.58.17.29.75 1.23 1.6 2 1.11.98 2.04 1.29 2.33 1.43.29.15.46.12.63-.07.17-.2.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/></svg>
+          <div><strong>WhatsApp</strong><span>+55 47 99175-7266</span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/brunomm81/" target="_blank" rel="noopener" class="contact-btn li">
+          <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95s-2.08 1.4-2.08 2.85V21h-4z"/></svg>
+          <div><strong>LinkedIn</strong><span>/in/brunomm81</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="brand-mark">BM</span>
+      <p>© <span id="year"></span> Bruno Monteiro · Consultor ERP Protheus · Itajaí/SC</p>
+      <a href="#hero" class="to-top" aria-label="Voltar ao topo">↑ Topo</a>
+    </div>
+  </footer>
+
+  <!-- ====== FLOATING WHATSAPP ====== -->
+  <a href="https://wa.me/5547991757266?text=Ol%C3%A1%20Bruno,%20vim%20pelo%20seu%20site!" target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.8 14.2c-.24.68-1.4 1.3-1.94 1.35-.5.05-1.13.07-1.82-.11-.42-.14-.96-.32-1.65-.62-2.9-1.25-4.8-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3s.75-2.12 1-2.42c.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.17-.3.38-.44.5-.14.15-.29.3-.13.58.17.29.75 1.23 1.6 2 1.11.98 2.04 1.29 2.33 1.43.29.15.46.12.63-.07.17-.2.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.66.78 1.94.93.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/></svg>
+    <span class="wa-tooltip">Fale comigo</span>
+  </a>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/counters.js" defer></script>
+  <script src="js/typing.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/hero-canvas.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
