@@ -1,0 +1,34 @@
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependências e build (caso o projeto passe a usar Node/bundlers)
+node_modules/
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Variáveis de ambiente / segredos
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários
+*.tmp
+*.bak
+*~

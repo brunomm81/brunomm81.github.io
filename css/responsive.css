@@ -11,6 +11,8 @@
   .vornx-grid { grid-template-columns: 1fr; gap: 34px; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .map-wrap { grid-template-columns: 1fr; }
+  .photo-flip-wrap { margin: 0 auto; }
 }
 
 @media (max-width: 760px) {

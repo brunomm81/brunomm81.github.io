@@ -11,9 +11,7 @@
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* stagger children (via inline delay set in JS) */
-
-/* ---- Keyframes ---- */
+/* ---- Keyframes gerais ---- */
 @keyframes spin { to { transform: rotate(360deg); } }
 
 @keyframes scrollDot {
@@ -39,14 +37,116 @@
 .type-cursor { color: var(--accent); font-weight: 400; animation: blink 1s step-end infinite; margin-left: 2px; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Float subtle for hero photo */
+/* Float sutil — agora aplicado no flip-card, não no photo-frame */
 @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-.photo-frame { animation: floaty 6s ease-in-out infinite; }
+.photo-flip-card { animation: floaty 6s ease-in-out infinite; }
+.photo-flip-card.flipped { animation-play-state: running; }
 
-/* Fade-in on load */
+/* Fade-in navbar */
 @keyframes fadeInDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
 .navbar { animation: fadeInDown .7s ease both; }
 
-/* Gradient text shimmer for brand mark on hover */
+/* Brand mark pop */
 .brand:hover .brand-mark { animation: pop .4s ease; }
 @keyframes pop { 50% { transform: scale(1.12) rotate(-4deg); } }
+
+/* ---- Hero title shimmer ---- */
+.hero-title {
+  background: linear-gradient(120deg, var(--heading) 0%, var(--accent-text) 40%, var(--heading) 60%, var(--heading) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 7s linear infinite;
+}
+@keyframes textShimmer {
+  from { background-position: 0% center; }
+  to { background-position: 220% center; }
+}
+
+/* Glow pulsante do hero */
+@keyframes glowPulse {
+  0%, 100% { opacity: .7; transform: scale(1); }
+  50%       { opacity: 1;  transform: scale(1.08); }
+}
+.hero-glow   { animation: glowPulse 6s ease-in-out infinite; }
+.hero-glow-2 { animation: glowPulse 8s ease-in-out infinite reverse; }
+
+/* Eyebrow accent dot */
+@keyframes eyebrowSlide { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: none; } }
+.hero-eyebrow { animation: eyebrowSlide .8s .3s ease both; }
+
+/* ---- Photo flip 3D ---- */
+.photo-flip-wrap {
+  perspective: 1100px;
+  width: min(340px, 78%);
+  aspect-ratio: 244 / 362;
+  position: relative; z-index: 2;
+}
+
+.photo-flip-card {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .95s cubic-bezier(.6,.04,.98,.335);
+  cursor: pointer;
+}
+.photo-flip-card.flipped { transform: rotateY(180deg); }
+
+.photo-flip-front,
+.photo-flip-back {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.photo-flip-back { transform: rotateY(180deg); }
+
+/* Mood label overlay */
+.photo-mood-label {
+  position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.52); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  color: #fff; font-size: .76rem; font-weight: 600;
+  padding: 6px 16px; border-radius: 20px; white-space: nowrap;
+  pointer-events: none; opacity: 0;
+  transition: opacity .4s ease;
+}
+.photo-flip-front:hover .photo-mood-label,
+.photo-flip-back:hover .photo-mood-label { opacity: 1; }
+.photo-flip-card:hover .photo-mood-label { opacity: 1; }
+
+/* Filtro CSS para diferenciar a mesma foto */
+.photo-smile  { filter: brightness(1.06) saturate(1.12); }
+.photo-serious { filter: grayscale(18%) brightness(.94) contrast(1.06); }
+
+/* Hint de clique na foto */
+.photo-flip-hint {
+  position: absolute; top: -36px; left: 50%; transform: translateX(-50%);
+  font-size: .74rem; font-weight: 600; color: var(--accent-text);
+  background: var(--accent-soft); padding: 5px 14px; border-radius: 20px;
+  white-space: nowrap; pointer-events: none;
+  animation: hintPop 3s 2s ease forwards;
+  opacity: 0;
+}
+@keyframes hintPop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(4px); }
+  20%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ---- Mapa — borda gradiente animada ---- */
+@keyframes borderSpin { to { --border-angle: 360deg; } }
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.map-frame-glow {
+  background: conic-gradient(from var(--border-angle),
+    var(--accent) 0%, var(--blue-300) 25%, transparent 50%, var(--blue-300) 75%, var(--accent) 100%);
+  animation: borderSpin 6s linear infinite;
+  border-radius: calc(var(--radius-lg) + 3px);
+  padding: 3px;
+}
